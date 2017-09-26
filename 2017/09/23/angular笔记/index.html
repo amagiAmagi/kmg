@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="第一天MVC设计模式Angular简介Angular的简要历史 Angular简称NG Angular最初诞生于2009年,由Misko Hevery等人创建. 由于Misko Hevery之前是做Java后台开发. 所以,在这个框架中融入了许多后台编程的思想在其中 比如:MVC设计模式、数据绑定等等. 后来,该框架被Google看中,Google将其收购.现在被Google所维护.  Angul">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular笔记">
+<meta property="og:url" content="http://yoursite.com/2017/09/23/angular笔记/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第一天MVC设计模式Angular简介Angular的简要历史 Angular简称NG Angular最初诞生于2009年,由Misko Hevery等人创建. 由于Misko Hevery之前是做Java后台开发. 所以,在这个框架中融入了许多后台编程的思想在其中 比如:MVC设计模式、数据绑定等等. 后来,该框架被Google看中,Google将其收购.现在被Google所维护.  Angul">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2017/09/23/angular笔记/images/331.png">
+<meta property="og:updated_time" content="2017-09-23T11:42:49.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular笔记">
+<meta name="twitter:description" content="第一天MVC设计模式Angular简介Angular的简要历史 Angular简称NG Angular最初诞生于2009年,由Misko Hevery等人创建. 由于Misko Hevery之前是做Java后台开发. 所以,在这个框架中融入了许多后台编程的思想在其中 比如:MVC设计模式、数据绑定等等. 后来,该框架被Google看中,Google将其收购.现在被Google所维护.  Angul">
+<meta name="twitter:image" content="http://yoursite.com/2017/09/23/angular笔记/images/331.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/23/angular笔记/"/>
+
+
+
+
+
+  <title>angular笔记 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/angular笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="布鲁甘木">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/dlrb.peg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">angular笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T19:25:14+08:00">
+                2017-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第一天MVC设计模式"><a href="#第一天MVC设计模式" class="headerlink" title="第一天MVC设计模式"></a>第一天MVC设计模式</h1><h2 id="Angular简介"><a href="#Angular简介" class="headerlink" title="Angular简介"></a>Angular简介</h2><h3 id="Angular的简要历史"><a href="#Angular的简要历史" class="headerlink" title="Angular的简要历史"></a>Angular的简要历史</h3><ul>
+<li>Angular简称NG</li>
+<li>Angular最初诞生于2009年,由<code>Misko Hevery</code>等人创建.</li>
+<li>由于Misko Hevery之前是做Java后台开发.</li>
+<li>所以,在这个框架中融入了许多后台编程的思想在其中</li>
+<li>比如:MVC设计模式、数据绑定等等.</li>
+<li>后来,该框架被Google看中,Google将其收购.现在被Google所维护.</li>
+</ul>
+<h3 id="Angular的重要特性"><a href="#Angular的重要特性" class="headerlink" title="Angular的重要特性."></a>Angular的重要特性.</h3><ul>
+<li>MVC: 在前端引入了MVC的设计模式.</li>
+<li>模块化开发</li>
+<li>自动的双向数据绑定</li>
+<li>语义化标签(自定义标签)</li>
+<li>依赖注入</li>
+<li>其核心就是通过指令扩展了HTML,通过表达式绑定数据到HTML</li>
+<li>Angular不推崇DOM操作,也就是说在NG中几乎找不到任何的DOM操作.</li>
+<li>ng最主要是用来实现spa应用. - 单页面应用程序</li>
+</ul>
+<h3 id="Angular的版本疑惑"><a href="#Angular的版本疑惑" class="headerlink" title="Angular的版本疑惑"></a>Angular的版本疑惑</h3><ul>
+<li>目前Angular的版本有如下三种</li>
+<li>1.x 比较稳定的版本,也是目前(2017.6)企业中的主流版本. 17年3月发布的1.6.4是1.x版本中最新的版本.</li>
+<li>2.x 实际上从15年年底的时候,就发布了第一个alpha版本.直到16年9月才发布2.0的稳定版,其相对1.x版本做了很大的改动. 没有受到开发者的热烈追捧.</li>
+<li>4.x 在2.x版本的ng遭受到失败后,Google立即启动了下1个版本的开发,由于新开发的版本做了相当多的改进和更新,所以下1个版本直接跳过3.0,叫做4.0, 并且第1个4.0的正式版已经于2017年的3月份发布. 然而,另外一个新的渐进式js框架-vue.js(中国人开发)正在挑战Angular的地位，而新的Angular版本是否能受到企业的青睐，让我们请时间做见证.</li>
+<li>目前，尤其国内企业如果使用到了Angular,几乎绝大多数使用的仍然是1.x版本的Angular,因为1.x版本深受企业的认可,这也就是为什么直到4.0都发布了，Google还在维护1.x版本的原因. Google自己都不放弃1.x, 那么当然已经使用1.x的用户自然也不会放弃了.</li>
+<li>版本历史参考 -&gt; <a href="https://code.angularjs.org/" target="_blank" rel="external">点击链接</a></li>
+</ul>
+<h2 id="Angular初体验"><a href="#Angular初体验" class="headerlink" title="Angular初体验"></a>Angular初体验</h2><h3 id="Angular下载"><a href="#Angular下载" class="headerlink" title="Angular下载"></a>Angular下载</h3><ul>
+<li>官网下载 <a href="https://angularjs.org/" target="_blank" rel="external">https://angularjs.org/</a></li>
+<li>npm下载 <code>npm install angular</code></li>
+<li>通过bower下载 <code>bower install angular</code></li>
+</ul>
+<h3 id="Angular体验"><a href="#Angular体验" class="headerlink" title="Angular体验"></a>Angular体验</h3><ul>
+<li><p>要实现的效果: 准备1个文本输入框,再准备1个h1标签.要求h1标签的文本和文本框的文字保持实时同步</p>
+</li>
+<li><p>使用原生js实现</p>
+<ul>
+<li>监听文本框的keyUp事件.</li>
+<li>一旦触发该事件.</li>
+<li>取出文本框中的文本设置给h1标签的innerText.</li>
+<li>代码略过.</li>
+</ul>
+</li>
+<li><p>使用Angular实现.</p>
+<ul>
+<li><p>第一步：引入Angular</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;lib/angular.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>第二步: 指定ng管理的标签.为body标签写上ng-app属性.代表body标签被ng管理.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app&gt;</div><div class="line">    &lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot; ng-model=&quot;val&quot;&gt;</div><div class="line">    &lt;h1&gt;｛｛val｝｝&lt;/h1&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>第三部: 数据绑定. 将文本框的数据和h1的数据进行绑定.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="MVC-设计模式"><a href="#MVC-设计模式" class="headerlink" title="MVC 设计模式"></a>MVC 设计模式</h2><h3 id="现实生活中的MVC"><a href="#现实生活中的MVC" class="headerlink" title="现实生活中的MVC"></a>现实生活中的MVC</h3><ul>
+<li>现实生活中的分工合作案例 – 大饭店<ul>
+<li>采购：负责原材料采购.</li>
+<li>小工: 打杂,洗菜,洗碗.</li>
+<li>厨师: 切菜 炒菜</li>
+<li>服务员：端菜 迎宾</li>
+<li>收银员: 收钱.</li>
+<li>店长: 指挥协调其它人员工作.</li>
+</ul>
+</li>
+<li>在一些街边小饭馆其实这些事情完全是交给一个人去做 –&gt; 老板<ul>
+<li>所有的事情都是这1个人去做.</li>
+</ul>
+</li>
+<li>对比一下这两种经营方式的区别<ul>
+<li>大饭店: 正规,分工合作,各司其职,效率高.</li>
+<li>小饭馆: 不正规,慌乱.效率低下.</li>
+</ul>
+</li>
+<li>同样的事情两种实现方式<ul>
+<li>都是将客人点的菜展示到餐桌上.</li>
+<li>不同的单位使用了不同的流程.</li>
+<li>大饭店: 每个人负责1个流程.高效并且可维护程度极高. 挂了1个人,不影响其它人.只换这1个人就可以.</li>
+<li>小饭馆: 1个人负责整个流程,效率低下并且可维护程度极低,老板挂了,饭馆就得关门.</li>
+</ul>
+</li>
+<li>由此可见,分工是多么的重要</li>
+</ul>
+<h3 id="代码中的MVC"><a href="#代码中的MVC" class="headerlink" title="代码中的MVC"></a>代码中的MVC</h3><ul>
+<li>实际上,我们写网站的过程,和开饭店的原理和流程极其相似,我们写网站是将数据展示到页面上.</li>
+<li>目前,我们写代码都是一股脑的将所有的代码写在一起,这样去写固然没有什么问题，因为你终究还是将效果实现了.</li>
+<li>但是这样做的后果是可怕的,随着项目越来越大,你的代码将变得非常难以维护.</li>
+<li>为了让我们的代码更加容易的维护,也为了使得我们的代码层次更加分明</li>
+<li>我们将我们的代码分为三部分<ul>
+<li>M - Model 数据 数据实体,用来保存页面要展示的数据.</li>
+<li>V - View 视图 负责显示数据的,一般其实就是指的html页面.</li>
+<li>C - Controller 控制器 控制整个业务逻辑,负责处理数据,比如数据的获取,以及数据的过滤，进而影响数据在视图上的展示.</li>
+</ul>
+</li>
+<li>这样,这3部分各司其职,分工合作,我们的代码就会变得更有层次并容易维护.</li>
+<li>这样的程序设计模式,我们就叫做MVC设计模式.</li>
+<li>所以,MVC并不是一个新的知识点,而是一个新的写代码的套路.MVC是由后端而来,由于受到前端技术的限制便有了一些细节的调整，进而出现了很多MVC的衍生版（子集）如MVVM、MVW、MVP、MV*等。</li>
+<li><code>注：做为初学可以不必过于在意这些概念。</code></li>
+</ul>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><ul>
+<li>使用AngularJS构建应用（App）时是以模块化（Module）的方式组织的，即将整个应用划分成若干模块，每个模块都有各自的职责，最终组合成一个整体。</li>
+<li>采用模块化的组织方式，可以最大程度的实现代码的复用，可以像搭积木一样进行开发。</li>
+</ul>
+<h3 id="定义应用"><a href="#定义应用" class="headerlink" title="定义应用"></a>定义应用</h3><ul>
+<li>通过为任一HTML标签添加ng-app属性，可以指定一个应用，表示此标签所包裹的内容都属于应用（App）的一部分。通俗的理解就是: ng-app属性标签被Angular管理，包括其中的子标签.Angular会认为这是一个应用，将其作为一个应用来看待。</li>
+</ul>
+<h3 id="定义模块"><a href="#定义模块" class="headerlink" title="定义模块"></a>定义模块</h3><ul>
+<li>AngularJS提供了一个全局对象angular,调用该全局对象的module()方法可以创建一个模块.该方法返回一个模块对象.这个模块对象就是AngularJS用来管理应用的对象.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;!--为html标签定义ng-app属性 代表整个文档都被ng管理--&gt;</div><div class="line">&lt;html lang=&quot;en&quot; ng-app=&quot;myApp&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;script src=&quot;lib/angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    //调用全局对象angular的module方法创建一个模块.</div><div class="line">    //第一个参数: 模块要管理的标签范围,写上ng-app属性的值.</div><div class="line">    //第二个参数: 模块依赖,数组,如果不需要依赖,就直接写一个空数组就可以.</div><div class="line">    //返回值:返回的app对象,我们可以认为这个对象就是用来管理这个模块的.</div><div class="line">    var app = angular.module(&apos;myApp&apos;,[])</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h3 id="定义控制器"><a href="#定义控制器" class="headerlink" title="定义控制器"></a>定义控制器</h3><ul>
+<li><p>接下来我们可以通过app模块对象来创建控制器.</p>
+</li>
+<li><p>调用app模块对象的controller方法，就可以创建控制器.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//调用全局对象angular的module方法创建一个模块.</div><div class="line">//第一个参数: 模块要管理的标签范围,写上ng-app属性的值.</div><div class="line">//第二个参数: 模块依赖,数组,如果不需要依赖,就直接写一个空数组就可以.</div><div class="line">//返回值:返回的app对象,我们可以认为这个对象就是ng用来管理这个模块的.</div><div class="line">var app = angular.module(&apos;myApp&apos;,[])</div><div class="line"></div><div class="line">//调用app的controller方法创建控制器.</div><div class="line">//第一个参数: 要将创建的控制器关联到指定的View上，字符串.</div><div class="line">//第二个参数: 这是一个数组,数组的其中一个元素是&apos;$scope&apos;,</div><div class="line">//           数组的最后一个元素必须是1个function 参数是$scope</div><div class="line">//           先这么认为,就这么死写,后面会解释原因.</div><div class="line">app.controller(&apos;demoCtrl&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line"></div><div class="line">&#125;]);</div></pre></td></tr></table></figure>
+</li>
+<li><p>但是这个时候,我们只是创建了控制器,并没有将控制器和视图关联起来.</p>
+</li>
+<li><p>视图是用来负责显示数据的,控制器是来处理数据模型,并将数据模型给视图展示.</p>
+</li>
+<li><p>视图就是我们的html页面. 所以我们可以指定1个html元素(视图)与这个控制器相关联.</p>
+</li>
+<li><p>为这个html元素指定1个ng-controller属性.值为创建controller的第1个参数的值.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-controller=&quot;demoCtrl&quot;&gt; &lt;!-- 这个时候,创建的控制器，就与这个视图关联起来了. --&gt;</div><div class="line">    &lt;dl&gt;</div><div class="line">        &lt;dt&gt;&lt;/dt&gt;</div><div class="line">        &lt;dd&gt;&lt;/dd&gt;</div><div class="line">    &lt;/dl&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>这个时候,创建的控制器，就与这个视图关联起来了</p>
+</li>
+<li><p>在控制器中就可以处理制造数据.视图中就可以显示模型数据了.</p>
+</li>
+</ul>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><ul>
+<li><p>控制器负责处理制造模型数据.</p>
+</li>
+<li><p>视图负责显示控制器制造的模型数据.</p>
+</li>
+<li><p>那么控制器如何制造数据呢?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">app.controller(&apos;demoCtrl&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">//我们可以认为,$scope就是一个数据模型.</div><div class="line">//这是一个对象，</div><div class="line">//这个对象可以在控制器中访问,也可以在与控制器关联的视图中直接访问.</div><div class="line">//那么这个时候,控制器中可以将制造的数据放在这个$scope对象中.</div><div class="line">$scope.name = &apos;小明&apos;;</div><div class="line">$scope.info = &apos;我在学习前端开发&apos;;</div><div class="line">&#125;]);</div></pre></td></tr></table></figure>
+</li>
+<li><p>这个时候,控制器已经负责将数据模型构建完毕,那么视图中如何展示这些数据呢?<img src="images/331.png" alt="img"></p>
+</li>
+<li><p>最后,视图中就显示出来数据了.</p>
+</li>
+</ul>
+<h2 id="Angular基本结构"><a href="#Angular基本结构" class="headerlink" title="Angular基本结构"></a>Angular基本结构</h2><ul>
+<li>1.指定Angular管理的范围.<code>ng-app</code></li>
+<li>2.创建模块. <code>angular.module()</code></li>
+<li>3.创建角色<ul>
+<li>3.1创建控制器 <code>app.controller()</code></li>
+<li>3.2指定与控制器关联的视图 <code>ng-controller</code></li>
+</ul>
+</li>
+<li>4.控制器制造数据模型并附到$scope. <code>$scope.xx = yy;</code></li>
+<li>5.在视图中显示模型数据. <code>｛｛xx｝｝</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;!-- 1.指定整个html文档都被ng管理--&gt;</div><div class="line">&lt;html lang=&quot;en&quot; ng-app=&quot;hmApp&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;script src=&quot;lib/angular.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;!-- 将视图与控制器相关联 --&gt;</div><div class="line">    &lt;table ng-controller=&quot;stuList&quot;&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;编号&lt;/td&gt;</div><div class="line">            &lt;td&gt;姓名&lt;/td&gt;</div><div class="line">            &lt;td&gt;性别&lt;/td&gt;</div><div class="line">            &lt;td&gt;年龄&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr ng-repeat=&quot;stu in students&quot;&gt;&lt;!-- 遍历数组,并循环生成html --&gt;</div><div class="line">            &lt;td&gt;｛｛stu.id&#125;&#125;&lt;/td&gt;</div><div class="line">            &lt;td&gt;｛｛stu.name&#125;&#125;&lt;/td&gt;</div><div class="line">            &lt;td&gt;｛｛stu.gender&#125;&#125;&lt;/td&gt;</div><div class="line">            &lt;td&gt;｛｛stu.age&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">    &lt;/table&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    //2.创建模块</div><div class="line">    var app = angular.module(&apos;hmApp&apos;,[]);</div><div class="line">    //3.创建MVC角色. 控制器,视图</div><div class="line">    app.controller(&apos;stuList&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">        //制造数据模型,并绑定到$scope中.</div><div class="line">        $scope.students = [</div><div class="line">            &#123;id:1,name:&apos;小明&apos;,gender:&apos;男&apos;,age:18&#125;,</div><div class="line">            &#123;id:2,name:&apos;小花&apos;,gender:&apos;女&apos;,age:16&#125;,</div><div class="line">            &#123;id:3,name:&apos;小强&apos;,gender:&apos;男&apos;,age:14&#125;,</div><div class="line">            &#123;id:4,name:&apos;小东&apos;,gender:&apos;男&apos;,age:19&#125;,</div><div class="line">            &#123;id:5,name:&apos;小常&apos;,gender:&apos;女&apos;,age:20&#125;</div><div class="line">        ];</div><div class="line">    &#125;]);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h2 id="Angular指令"><a href="#Angular指令" class="headerlink" title="Angular指令"></a>Angular指令</h2><ul>
+<li>HTML在构建应用（App）时存在诸多不足之处</li>
+<li>AngularJS通过扩展一系列的HTML属性或标签来弥补这些缺陷</li>
+<li>所谓指令就是AngularJS自定义的HTML属性或标签</li>
+<li>这些指令都是以ng-做为前缀的，例如ng-app、ng-controller、ng-repeat等。</li>
+</ul>
+<h3 id="内置指令"><a href="#内置指令" class="headerlink" title="内置指令"></a>内置指令</h3><ul>
+<li><code>ng-app</code> 指定应用根元素 也就是ng管理的范围.可以使用全局对象angular的module方法根据该属性的值创建模块对象.</li>
+<li><code>ng-controller</code> 指定与控制器关联的视图.</li>
+<li><code>ng-show</code> 控制元素及其子元素是否显示 true-&gt;显示 false-&gt;不显示</li>
+<li><code>ng-hide</code> 控制元素及其子元素是否隐藏 true-&gt;隐藏 false-&gt;不隐藏</li>
+<li><code>ng-if</code> 控制元素及其子元素是否创建 true-&gt;创建 false-&gt;删除.</li>
+<li><code>ng-src</code> 增强图片路径. src=””虽然能显示,但是会报错.报错的原因.</li>
+<li><code>ng-href</code> 增强href路径</li>
+<li><code>ng-class</code> 值为对象 <code>{red:true}</code> 表示会添加1个red类名到元素身上.<code>{red:false}</code>不会将red类名添加到元素身上.</li>
+<li><code>ng-include</code> 将外部文件包含进来.一般用在页面的公共部分.被请求的页面是以ajax的方式请求的. <code>ng-inlcude=&quot;&#39;path&#39;&quot;</code>需要注意的是,给该属性赋值的时候,属性本身的值应该使用双引号引起来,但是其中的路径还要使用单引号引起来.</li>
+<li><code>ng-disable</code> 是否禁用表单元素</li>
+<li><code>ng-readonly</code> 是否只读</li>
+<li><code>ng-checked</code>　原生的checked属性带有歧义,ng补充1个新的指令ng-checked 其值bool类型 true选中 false不选中.</li>
+<li><code>ng-selected</code> 是否选中</li>
+<li>后续的学习中我们还会介绍其他的内置指令.</li>
+</ul>
+<h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><ul>
+<li><p>AngularJS不仅提供了功能强大的内置指令.还提供了一套允许我们自定义指令的机制.</p>
+</li>
+<li><p>如果我们觉得ng提供的指令不够强大和好用,我们完全可以定义我们自己的指令.</p>
+</li>
+<li><p>模块对象app,提供了一个<code>directive</code>方法,这个方法就可以让我们自定义指令.</p>
+</li>
+<li><p>该方法需要两个参数</p>
+<ul>
+<li><p>第1个参数 指令的名称 - 指令名称不能包含符号，如果指令名称是<code>tag</code>,那么直接使用tag就行. 如果指令是<code>hmTag</code>,那么要使用<code>hm-tag</code></p>
+</li>
+<li><p>第2个参数 回调函数</p>
+<ul>
+<li>在ng解析这个指令的时候,就会自动去执行这个回调函数.</li>
+<li>这个回调函数必须要按照要求返回1个对象.<ul>
+<li>restrict: ECMA E:Element C:Class M:Mark A:Attribute 自定义指令</li>
+<li>replace: bool值,是否替换原有标签.</li>
+<li>template: 模板,自定义指令将被替换成什么.</li>
+<li>templateUrl:加载外部文件 给一个需要加载的文件的路径.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot; ng-app=&quot;hmApp&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">  &lt;title&gt;Title&lt;/title&gt;</div><div class="line">  &lt;script src=&quot;lib/angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div hm-tag&gt;&lt;/div&gt; &lt;!--加了这个自定义指令的标签中,就会被自动渲染自定义指令对应的template --&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  var app = angular.module(&apos;hmApp&apos;,[]);</div><div class="line">  app.directive(&apos;hmTag&apos;,function () &#123;</div><div class="line">      return &#123;</div><div class="line">          restrict:&apos;EA&apos;,</div><div class="line">          replace:false,</div><div class="line">          template:&apos;&lt;h1&gt;我是中国人,我爱自己的祖国&lt;/h1&gt;&apos;</div><div class="line">      &#125;;</div><div class="line">  &#125;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据单向绑定"><a href="#数据单向绑定" class="headerlink" title="数据单向绑定"></a>数据单向绑定</h2><h3 id="数据单向绑定-1"><a href="#数据单向绑定-1" class="headerlink" title="数据单向绑定"></a>数据单向绑定</h3><ul>
+<li><p>所谓的数据的单向绑定,指的就是在控制器中制造数据模型，并将数据模型显示在视图上的过程.</p>
+</li>
+<li><p>处理方式其实我们前面也完全学习过了.</p>
+</li>
+<li><p>数据单向绑定的步骤</p>
+<ul>
+<li><p>1.先在控制器中制造数据.</p>
+</li>
+<li><p>2.在视图中使用绑定符号｛｛｝｝ 将控制器制造的数据模型显示.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot; ng-app=&quot;hmApp&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">  &lt;title&gt;Title&lt;/title&gt;</div><div class="line">  &lt;script src=&quot;lib/angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div ng-controller=&quot;demoCtrl&quot;&gt;</div><div class="line">  &lt;h1&gt;&lt;/h1&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">      &lt;li ng-repeat=&quot;item in data.courses&quot;&gt;&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  var app = angular.module(&apos;hmApp&apos;,[]);</div><div class="line">  app.controller(&apos;demoCtrl&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">      $scope.data = &#123;</div><div class="line">          name:&quot;小明&quot;,</div><div class="line">          courses:[&apos;html&apos;,&apos;css&apos;,&apos;js&apos;]</div><div class="line">      &#125;;</div><div class="line">  &#125;]);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>需要特别说明的是<code>ng-bind</code>指令和<code>｛｛｝｝</code>符号的效果是一样的.</p>
+</li>
+<li><p><code>｛｛｝｝</code>符号是<code>ng-bind</code>指令的简写形式.</p>
+</li>
+<li><p>所以,上面的代码也可以这样写.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-controller=&quot;demoCtrl&quot;&gt;</div><div class="line">    &lt;h1 ng-bind=&quot;data.name&quot;&gt;&lt;/h1&gt;</div><div class="line">    &lt;!-- ng-bind指令与｛｛｝｝符号完全等价 --&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li ng-repeat=&quot;item in data.courses&quot; ng-bind=&quot;item&quot;&gt;&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>虽然<code>ng-bind</code>与<code>｛｛｝｝</code>使用效果是一样的，但是在更多的地方我们仍然使用<code>｛｛｝｝</code>的场景更多一些</p>
+</li>
+<li><p>比如: 这样的情况使用<code>｛｛｝｝</code>就方便的很多了.<code>大家好,我叫｛｛name｝｝,我今年岁｛｛age｝｝了</code></p>
+</li>
+</ul>
+<h3 id="解决闪烁问题"><a href="#解决闪烁问题" class="headerlink" title="解决闪烁问题"></a>解决闪烁问题</h3><ul>
+<li>虽然<code>｛｛｝｝</code>符号和<code>ng-bind</code>指令作用是一样的.但是他们在效果上有一些些区别</li>
+<li>使用<code>｛｛｝｝</code>符号有可能会出现闪烁现行(当吧ng文件的引入放在页面后面的时候)</li>
+<li>出现闪烁的原因<ul>
+<li>浏览器先渲染html页面.遇到ng指令不认识 原因输出.</li>
+<li>而后,ng开始工作,渲染绑定数据.</li>
+<li>所以，中间有这么一个闪烁的过程.</li>
+</ul>
+</li>
+<li>解决闪烁问题<ul>
+<li>第一种方式: 将ng文件的引入放在head标签中.</li>
+<li>第二种方式: 为标签添加1个<code>ng-cloak</code>指令.就可以解决.</li>
+</ul>
+</li>
+<li><code>ng-cloak</code>的原理.ng会自动的生成1段css代码,将这个标签隐藏.当数据绑定工作完成之后,再显示这个标签.</li>
+</ul>
+<h2 id="数据双向绑定"><a href="#数据双向绑定" class="headerlink" title="数据双向绑定"></a>数据双向绑定</h2><ul>
+<li><p><code>ng-model</code>指令可以作用于表单元素.</p>
+</li>
+<li><p>该指令的作用</p>
+<ul>
+<li>声明1个变量.该属性的值就是声明的变量.</li>
+<li>这个变量的值和表单元素的值是相互影响的.</li>
+<li>表单元素的值发生变化,这个变量的值也会跟着发生变化.</li>
+<li>这个变量的值发生变化,表单元素的值也会跟着发生变化.</li>
+</ul>
+</li>
+<li><p>这样的数据绑定,就叫做双向数据绑定.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;div ng-controller=&quot;demoCtrl&quot;&gt;</div><div class="line">        &lt;input type=&quot;text&quot; ng-model=&quot;val&quot;&gt; &lt;!-- 使用ng-model指令声明的变量val，</div><div class="line">        被文本框的值绑定 文本框的值改变会影响val的值,val的值得改变也会影响文本框的值, </div><div class="line">        这个时候，文本框的值和变量val是一个双向绑定的关系.--&gt;</div><div class="line">        &lt;h1&gt;｛｛val&#125;&#125;&lt;/h1&gt;</div><div class="line">        &lt;button ng-click=&quot;show()&quot;&gt;按钮&lt;/button&gt; &lt;!-- 按钮点击的时候,</div><div class="line">        执行控制器绑定在$scope上的show方法，这个方法中直接修改了val</div><div class="line">        变量的值, 你会发现文本框中的数据也会跟着一起改变.</div><div class="line">        这就是双向数据绑定--&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        var app = angular.module(&apos;hmApp&apos;,[]);</div><div class="line">        app.controller(&apos;demoCtrl&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">            $scope.show = function () &#123;</div><div class="line">                $scope.val = 199;</div><div class="line">            &#125;</div><div class="line">        &#125;]);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="ng-init指令"><a href="#ng-init指令" class="headerlink" title="ng-init指令"></a>ng-init指令</h2><ul>
+<li><p>数据模型的初始化,我们一般是放在控制器中.</p>
+</li>
+<li><p>为$scope对象附加属性的方式来追加.</p>
+</li>
+<li><p>然后在视图中就可以直接绑定数据.</p>
+</li>
+<li><p>实际上,Angular还提供了一种更为简便的方式来初始化模型数据.就是使用<code>ng-init</code>属性.</p>
+</li>
+<li><p>使用ng-init初始化的变量在控制器中通过$scope仍然可以访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-init=&quot;name=&apos;jack&apos;;age=10&quot;&gt; &lt;!-- 初始化多个变量的话中间使用分号隔开 --&gt;</div><div class="line">    ｛｛name&#125;&#125;</div><div class="line">    ｛｛age&#125;&#125;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var app = angular.module(&apos;hmApp&apos;,[]);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>对于一些复杂的数据模型,比如数组、对象明显在controller中初始化就方便的很多.</p>
+</li>
+</ul>
+<h2 id="Angular事件处理"><a href="#Angular事件处理" class="headerlink" title="Angular事件处理"></a>Angular事件处理</h2><h3 id="ng-click"><a href="#ng-click" class="headerlink" title="ng-click"></a>ng-click</h3><ul>
+<li><p>原生js中如果需要绑定点击事件,在html元素中使用<code>onclick</code>属性,指定该属性的值为一个函数调用.</p>
+</li>
+<li><p>那么这个函数就是全局的函数,会造成全局污染.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    function login()&#123;</div><div class="line">        .......</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;button onclick=&quot;login()&quot;&gt;登录&lt;/button&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Angular为了解决这个问题,使用了1个ng指令<code>ng-click</code></p>
+</li>
+<li><p>这是Angular中的点击指令,为其赋值一个函数,不同的是,这个函数需要在控制器中绑定到$scope对象中.</p>
+</li>
+<li><p>那么这个函数就不再是一个全局的函数,就不存在全局污染的问题了.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-controller=&quot;demoCtrl&quot;&gt;</div><div class="line">    &lt;!-- 指定按钮的ng-click为login--&gt;</div><div class="line">    &lt;button ng-click=&quot;login()&quot;&gt;按钮&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var app = angular.module(&apos;hmApp&apos;,[]);</div><div class="line">    app.controller(&apos;demoCtrl&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">        //在控制器中为$scope绑定login函数.这样在视图中就可以调用</div><div class="line">        $scope.login = function () &#123; </div><div class="line">            alert(&quot;正在登录,请稍后.....&quot;);</div><div class="line">        &#125;</div><div class="line">    &#125;]);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="ng-mouseover"><a href="#ng-mouseover" class="headerlink" title="ng-mouseover"></a>ng-mouseover</h3><ul>
+<li>其实原理是一样的,这是ng的指令 用来绑定鼠标移入事件.`  </li>
+</ul>
+<p>​      按钮<br>​      </p>
+<p>​      var app = angular.module(‘hmApp’,[]);<br>​      app.controller(‘demoCtrl’,[‘$scope’,function ($scope) {<br>​          $scope.login = function () {<br>​              alert(“正在登录,请稍后…..”);<br>​          };<br>​          $scope.mover = function () {<br>​              console.log(“鼠标移入了…..”);<br>​          }<br>​      }]);</p>
+<h3 id="其它事件指令"><a href="#其它事件指令" class="headerlink" title="其它事件指令"></a>其它事件指令</h3><ul>
+<li>其实你应该已经猜测到一些规律了.</li>
+<li>Angular的事件指令是在原生指令属性的基础之上把on去掉替换为ng-</li>
+<li>onclick –&gt; ng-click</li>
+<li>onmouseover –&gt; ng-mouseover</li>
+<li>onkeyup –&gt; ng-keyup</li>
+<li>……</li>
+</ul>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><h3 id="ng-repeat指令"><a href="#ng-repeat指令" class="headerlink" title="ng-repeat指令"></a>ng-repeat指令</h3><ul>
+<li><p>用于循环生成标签,并绑定数据.</p>
+</li>
+<li><p>可以遍历数组.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot; ng-app=&quot;hmApp&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;script src=&quot;lib/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div ng-controller=&quot;processDataView&quot;&gt;</div><div class="line">        &lt;ul&gt;</div><div class="line">            &lt;!-- ng-repeat指令代表重复生成这个标签.值代表遍历数组中的每一个元素 并绑定显示 --&gt;</div><div class="line">            &lt;li ng-repeat=&quot;item in lessons&quot;&gt;｛｛item&#125;&#125;&lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        var app = angular.module(&apos;hmApp&apos;,[]);</div><div class="line">        app.controller(&apos;processDataView&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">            $scope.lessons = [&apos;html&apos;,&apos;css&apos;,&apos;js&apos;,&apos;jQuery&apos;];</div><div class="line">        &#125;])</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以遍历对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot; ng-app=&quot;hmApp&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;script src=&quot;lib/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div ng-controller=&quot;processDataView&quot;&gt;</div><div class="line">        &lt;ul&gt;</div><div class="line">            &lt;li ng-repeat=&quot;item in lessons&quot;&gt;&lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        &lt;table&gt;</div><div class="line">            &lt;tr&gt;</div><div class="line">                &lt;!--遍历对象,item迭代变量直接就是每一个属性的值--&gt;</div><div class="line">                &lt;td ng-repeat=&quot;item in student&quot;&gt;｛｛item&#125;&#125;&lt;/td&gt;</div><div class="line">                &lt;!--如果希望得到属性名称和属性值 可以像下面这样</div><div class="line">                    如果是数组,key拿到的就是下标          --&gt;</div><div class="line">                &lt;td ng-repeat=&quot;(key,item) in student&quot;&gt;｛｛key&#125;&#125;:｛｛item&#125;&#125;&lt;/td&gt;</div><div class="line">            &lt;/tr&gt;</div><div class="line">        &lt;/table&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        var app = angular.module(&apos;hmApp&apos;,[]);</div><div class="line">        app.controller(&apos;processDataView&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">            $scope.lessons = [&apos;html&apos;,&apos;css&apos;,&apos;js&apos;,&apos;jQuery&apos;];</div><div class="line">            $scope.student = &#123;</div><div class="line">                name:&quot;杰克&quot;,</div><div class="line">                age:18,</div><div class="line">                gender:&quot;男&quot;</div><div class="line">            &#125;;</div><div class="line">        &#125;])</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="ng-switch"><a href="#ng-switch" class="headerlink" title="ng-switch"></a>ng-switch</h3><ul>
+<li><p>该指令的作用与js的<code>switch-case</code>非常相像</p>
+</li>
+<li><p>判断变量的值,如果变量的之与列出的任意1个值相等,则执行其中的逻辑.</p>
+</li>
+<li><p>语法规则</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 判断变量item的值 可以直接简写为ng-switch --&gt;</div><div class="line">&lt;li ng-repeat=&quot;item in list&quot; ng-switch on=&quot;item&quot;&gt;</div><div class="line">    &lt;span ng-switch-when=&quot;html&quot;&gt;我喜欢html&lt;/span&gt;</div><div class="line">    &lt;p ng-switch-when=&quot;ccs&quot;&gt;哈哈css&lt;/p&gt;</div><div class="line">    &lt;a ng-switch-when=&quot;js&quot; href=&quot;#&quot;&gt;哦js&lt;/a&gt;</div><div class="line">    &lt;span ng-switch-when=&quot;jQuery&quot;&gt;like jQuery&lt;/span&gt;</div><div class="line">    &lt;span ng-switch-default&gt;啦啦啦,没有匹配到&lt;/span&gt;</div><div class="line">&lt;/li&gt;</div><div class="line">&lt;!-- 在重复li标签时 到底嵌套那1个 根据when的值匹配来决定 当没有任何匹配的时候 就是default--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>也可以下面这样使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot; ng-app=&quot;hmApp&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;script src=&quot;lib/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div ng-controller=&quot;demoCtrl&quot; ng-switch=&quot;name&quot;&gt;</div><div class="line">        &lt;div ng-switch-when=&quot;rose&quot;&gt;Rose&lt;/div&gt;</div><div class="line">        &lt;div ng-switch-when=&quot;jack&quot;&gt;Jack&lt;/div&gt;</div><div class="line">        &lt;div ng-switch-when=&quot;lily&quot;&gt;Lily&lt;/div&gt;</div><div class="line">        &lt;div ng-switch-when=&quot;poly&quot;&gt;Poly&lt;/div&gt;</div><div class="line">        &lt;div ng-switch-default&gt;默认选项&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var app = angular.module(&apos;hmApp&apos;,[]);</div><div class="line">    app.controller(&apos;demoCtrl&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">        $scope.name = &quot;jack&quot;;</div><div class="line">    &#125;]);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Tabs案例"><a href="#Tabs案例" class="headerlink" title="Tabs案例"></a>Tabs案例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Tab 标签&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        body &#123;</div><div class="line">            margin: 0;</div><div class="line">            padding: 0;</div><div class="line">            background-color: #F7F7F7;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .tabs &#123;</div><div class="line">            width: 400px;</div><div class="line">            margin: 30px auto;</div><div class="line">            background-color: #FFF;</div><div class="line">            border: 1px solid #C0DCC0;</div><div class="line">            box-sizing: border-box;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .tabs nav &#123;</div><div class="line">            height: 40px;</div><div class="line">            text-align: center;</div><div class="line">            line-height: 40px;</div><div class="line">            overflow: hidden;</div><div class="line">            background-color: #C0DCC0;</div><div class="line">            display: flex;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        nav a &#123;</div><div class="line">            display: block;</div><div class="line">            width: 100px;</div><div class="line">            border-right: 1px solid #FFF;</div><div class="line">            color: #000;</div><div class="line">            text-decoration: none;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        nav a:last-child &#123;</div><div class="line">            border-right: 0 none;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        nav a.active &#123;</div><div class="line">            background-color: #9BAF9B;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .cont &#123;</div><div class="line">            overflow: hidden;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .cont ol &#123;</div><div class="line">            line-height: 30px;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;script src=&quot;lib/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body ng-app=&quot;hmApp&quot;&gt;</div><div class="line">    &lt;div class=&quot;tabs&quot; ng-controller=&quot;TabsCtrl&quot;&gt;</div><div class="line">        &lt;nav&gt;</div><div class="line">            &lt;a href=&quot;javascript:;&quot; ng-click=&quot;switch(&apos;local&apos;)&quot; ng-class=&quot;&#123;active:flag==&apos;local&apos;&#125;&quot;&gt;国内新闻&lt;/a&gt;</div><div class="line">            &lt;a href=&quot;javascript:;&quot; ng-click=&quot;switch(&apos;global&apos;)&quot; ng-class=&quot;&#123;active:flag==&apos;global&apos;&#125;&quot;&gt;国际新闻&lt;/a&gt;</div><div class="line">            &lt;a href=&quot;javascript:;&quot; ng-click=&quot;switch(&apos;sport&apos;)&quot; ng-class=&quot;&#123;active:flag==&apos;sport&apos;&#125;&quot;&gt;体育新闻&lt;/a&gt;</div><div class="line">            &lt;a href=&quot;javascript:;&quot; ng-click=&quot;switch(&apos;funny&apos;)&quot; ng-class=&quot;&#123;active:flag==&apos;funny&apos;&#125;&quot;&gt;娱乐新闻&lt;/a&gt;</div><div class="line">        &lt;/nav&gt;</div><div class="line">        &lt;!-- 判断key数据的值 --&gt;</div><div class="line">        &lt;div ng-switch=&quot;flag&quot;&gt;</div><div class="line">            &lt;!-- 当key值funny时 --&gt;</div><div class="line">            &lt;section class=&quot;cont&quot; ng-switch-when=&quot;local&quot;&gt;</div><div class="line">                &lt;ol&gt;</div><div class="line">                    &lt;li&gt;河南再次发生矿难，死伤人数超砖石ddddddddddddd过100dddads&lt;/li&gt;</div><div class="line">                    &lt;li&gt;禽流感在全国物农延，温家宝指示&lt;/li&gt;</div><div class="line">                    &lt;li&gt;南方大旱，农作物减产绝收面积上亩&lt;/li&gt;</div><div class="line">                    &lt;li&gt;猪流感在广东群体性暴发&lt;/li&gt;</div><div class="line">                    &lt;li&gt;禽流感在全农作物继续蔓延，温家宝指示&lt;/li&gt;</div><div class="line">                    &lt;li&gt;猪流感在广东群体性暴发&lt;/li&gt;</div><div class="line">                &lt;/ol&gt;</div><div class="line">            &lt;/section&gt;</div><div class="line">            &lt;!-- 当key值local时 --&gt;</div><div class="line">            &lt;section class=&quot;cont&quot; ng-switch-when=&quot;global&quot;&gt;</div><div class="line">                &lt;ol&gt;</div><div class="line">                    &lt;li&gt;河感在生矿难，死伤在全10&lt;/li&gt;</div><div class="line">                    &lt;li&gt;禽流感在感在广1处继续蔓延，温家宝指示&lt;/li&gt;</div><div class="line">                    &lt;li&gt;南方大旱，农作物减产绝收面积上亩&lt;/li&gt;</div><div class="line">                    &lt;li&gt;猪流感在广在全国暴发&lt;/li&gt;</div><div class="line">                    &lt;li&gt;禽流感在全国多处继续蔓延，温家宝指示&lt;/li&gt;</div><div class="line">                    &lt;li&gt;南方大旱，农作物减产绝收面积上亩&lt;/li&gt;</div><div class="line">                    &lt;li&gt;猪流感在广东群体性暴发&lt;/li&gt;</div><div class="line">                &lt;/ol&gt;</div><div class="line">            &lt;/section&gt;</div><div class="line">            &lt;!-- 当key值sports时 --&gt;</div><div class="line">            &lt;section class=&quot;cont&quot; ng-switch-when=&quot;sport&quot;&gt;</div><div class="line">                &lt;ol&gt;</div><div class="line">                    &lt;li&gt;河南再次发生矿难，死伤人数超过100&lt;/li&gt;</div><div class="line">                    &lt;li&gt;禽流感在全国多处农作物农延，温家宝指示&lt;/li&gt;</div><div class="line">                    &lt;li&gt;南方大旱，农作物减产绝收面积上亩&lt;/li&gt;</div><div class="line">                    &lt;li&gt;猪流感在广东群体性暴发&lt;/li&gt;</div><div class="line">                    &lt;li&gt;禽流感在全农作物继续蔓延，温家宝指示&lt;/li&gt;</div><div class="line">                    &lt;li&gt;南方大农作物减产绝收面积上亩&lt;/li&gt;</div><div class="line">                    &lt;li&gt;猪流感在广东群体性暴发&lt;/li&gt;</div><div class="line">                &lt;/ol&gt;</div><div class="line">            &lt;/section&gt;</div><div class="line">            &lt;!-- 当key值global时 --&gt;</div><div class="line">            &lt;section class=&quot;cont&quot; ng-switch-when=&quot;funny&quot;&gt;</div><div class="line">                &lt;ol&gt;</div><div class="line">                    &lt;li&gt;河南再次发生矿难，死伤人数超过100&lt;/li&gt;</div><div class="line">                    &lt;li&gt;禽流感次发生蔓延，温家宝指示&lt;/li&gt;</div><div class="line">                    &lt;li&gt;南方大旱，农作物减产绝收面积上亩&lt;/li&gt;</div><div class="line">                    &lt;li&gt;猪流感在广减产绝收发&lt;/li&gt;</div><div class="line">                    &lt;li&gt;禽流感在全国多作物减产绝收面积上亩&lt;/li&gt;</div><div class="line">                    &lt;li&gt;猪流感在广东群体性暴发&lt;/li&gt;</div><div class="line">                &lt;/ol&gt;</div><div class="line">            &lt;/section&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        var app = angular.module(&apos;hmApp&apos;,[]);</div><div class="line">        app.controller(&apos;TabsCtrl&apos;,[&apos;$scope&apos;,function ($scope) &#123;</div><div class="line">            $scope.flag = &apos;local&apos;;</div><div class="line">            $scope.switch = function (key) &#123;</div><div class="line">                $scope.flag = key;</div><div class="line">            &#125;</div><div class="line">        &#125;]);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/dlrb.peg"
+               alt="布鲁甘木" />
+          <p class="site-author-name" itemprop="name">布鲁甘木</p>
+           
+              <p class="site-description motion-element" itemprop="description">每一次努力过后的成就都是不放弃的人对生活最好的反击</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一天MVC设计模式"><span class="nav-number">1.</span> <span class="nav-text">第一天MVC设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular简介"><span class="nav-number">1.1.</span> <span class="nav-text">Angular简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular的简要历史"><span class="nav-number">1.1.1.</span> <span class="nav-text">Angular的简要历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular的重要特性"><span class="nav-number">1.1.2.</span> <span class="nav-text">Angular的重要特性.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular的版本疑惑"><span class="nav-number">1.1.3.</span> <span class="nav-text">Angular的版本疑惑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular初体验"><span class="nav-number">1.2.</span> <span class="nav-text">Angular初体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular下载"><span class="nav-number">1.2.1.</span> <span class="nav-text">Angular下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular体验"><span class="nav-number">1.2.2.</span> <span class="nav-text">Angular体验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC-设计模式"><span class="nav-number">1.3.</span> <span class="nav-text">MVC 设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#现实生活中的MVC"><span class="nav-number">1.3.1.</span> <span class="nav-text">现实生活中的MVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码中的MVC"><span class="nav-number">1.3.2.</span> <span class="nav-text">代码中的MVC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">1.4.</span> <span class="nav-text">模块化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义应用"><span class="nav-number">1.4.1.</span> <span class="nav-text">定义应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义模块"><span class="nav-number">1.4.2.</span> <span class="nav-text">定义模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义控制器"><span class="nav-number">1.4.3.</span> <span class="nav-text">定义控制器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据模型"><span class="nav-number">1.4.4.</span> <span class="nav-text">数据模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular基本结构"><span class="nav-number">1.5.</span> <span class="nav-text">Angular基本结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular指令"><span class="nav-number">1.6.</span> <span class="nav-text">Angular指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内置指令"><span class="nav-number">1.6.1.</span> <span class="nav-text">内置指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义指令"><span class="nav-number">1.6.2.</span> <span class="nav-text">自定义指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据单向绑定"><span class="nav-number">1.7.</span> <span class="nav-text">数据单向绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据单向绑定-1"><span class="nav-number">1.7.1.</span> <span class="nav-text">数据单向绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决闪烁问题"><span class="nav-number">1.7.2.</span> <span class="nav-text">解决闪烁问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据双向绑定"><span class="nav-number">1.8.</span> <span class="nav-text">数据双向绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ng-init指令"><span class="nav-number">1.9.</span> <span class="nav-text">ng-init指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular事件处理"><span class="nav-number">1.10.</span> <span class="nav-text">Angular事件处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ng-click"><span class="nav-number">1.10.1.</span> <span class="nav-text">ng-click</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ng-mouseover"><span class="nav-number">1.10.2.</span> <span class="nav-text">ng-mouseover</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它事件指令"><span class="nav-number">1.10.3.</span> <span class="nav-text">其它事件指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据处理"><span class="nav-number">1.11.</span> <span class="nav-text">数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ng-repeat指令"><span class="nav-number">1.11.1.</span> <span class="nav-text">ng-repeat指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ng-switch"><span class="nav-number">1.11.2.</span> <span class="nav-text">ng-switch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tabs案例"><span class="nav-number">1.12.</span> <span class="nav-text">Tabs案例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">布鲁甘木</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
